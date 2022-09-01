@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="gumball:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/gumball_jar</output-path>
+    <root id="archive" name="gumball.jar">
+      <element id="module-output" name="gumball" />
+      <element id="module-source" name="gumball" />
+      <element id="dir-copy" path="$PROJECT_DIR$/src" />
+    </root>
+  </artifact>
+</component>
