@@ -56,7 +56,7 @@ public class MyFrame extends JFrame{
             yPrice.setFont(new Font("Arial",Font.BOLD,20));
 
 
-            //Reset button
+            //Reset button function
             JButton resetButt = new JButton("Reset");
             resetButt.addActionListener(e -> {
                     CurrencyAmount = 0;
@@ -72,18 +72,19 @@ public class MyFrame extends JFrame{
 
 
 
+            // left format setting
 
             leftPanel.add(Box.createVerticalStrut(150));
-            leftPanel.add(gumballGot);
-            leftPanel.add(Box.createVerticalStrut(20));
+            leftPanel.add(gumballGot); // gumball price title
 
+            //add red gumball price and label
+            leftPanel.add(Box.createVerticalStrut(20));
             leftPanel.add(rGumball);
             leftPanel.add(rPrice);
 
+            // add yellow gumball and label
             leftPanel.add(yGumball);
             leftPanel.add(yPrice);
-
-
             leftPanel.add(Box.createVerticalStrut(120));
             leftPanel.add(resetButt);
 
@@ -93,9 +94,6 @@ public class MyFrame extends JFrame{
 
             // add left panel
             mainPanel.add(leftPanel,BorderLayout.WEST);
-
-
-
 
 
 
@@ -144,10 +142,7 @@ public class MyFrame extends JFrame{
 
              */
 
-    //        JPanel insertCoin = new JPanel();
             Box insertCoinSec = Box.createVerticalBox();
-
-
             JLabel insertLabel = new JLabel("Insert");
             insertLabel.setFont(new Font("Arial",Font.BOLD,25));
 
@@ -203,21 +198,30 @@ public class MyFrame extends JFrame{
             redLever.setAlignmentX(JComponent.CENTER_ALIGNMENT);
             yellowLever.setAlignmentX(JComponent.CENTER_ALIGNMENT);
 
+            // purchase red gumball function
             redLever.addActionListener(e -> {
                     if (CurrencyAmount >= 5){
                             CurrencyAmount = CurrencyAmount - 5;
                             red_gumball_amount = red_gumball_amount + 1;
                             red_gumball_have.setText("Red Gumballs : " + red_gumball_amount);
                             insertAmount.setText("Your Amount : " + CurrencyAmount +"\t¢");
+                    }else{
+                            //need coins warning
+                            JOptionPane.showMessageDialog(null, "not enough Coins !!!");
                     }
             });
 
+
+            // purchase yellow gumball function
             yellowLever.addActionListener(e -> {
                     if (CurrencyAmount >= 10){
                             CurrencyAmount = CurrencyAmount - 10;
                             yellow_gumball_amount = yellow_gumball_amount + 1;
                             yellow_gumball_have.setText("Yellow Gumballs : " + yellow_gumball_amount);
                             insertAmount.setText("Your Amount : " + CurrencyAmount +"\t¢");
+                    }else{
+                            //need coins warning
+                            JOptionPane.showMessageDialog(null, "not enough Coins !!!");
                     }
             });
             twoLevers.add(redLever);
@@ -239,17 +243,24 @@ public class MyFrame extends JFrame{
 
 
 
-            // right panel
+            /* right panel
+            use box layout
+            - return my change button
+            - customer red gumball
+            - customer yellow gumball
+            - your change label
+
+             */
 
 
 
             Box rightPanel = Box.createVerticalBox();
 
-
+            // customer gumball title
             JLabel yourGumball = new JLabel("Your Gumball");
 
+            // return button function
             JButton return_my_change = new JButton("Return My Change");
-
             return_my_change.addActionListener(e -> {
                     changesReturn = changesReturn + CurrencyAmount;
                     YChanges.setText("Your Changes : " + changesReturn +"\t¢");
@@ -260,12 +271,12 @@ public class MyFrame extends JFrame{
             yourGumball.setFont(new Font("Arial" , Font.BOLD,20));
 
 
+            //format setting
             return_my_change.setAlignmentX(JComponent.CENTER_ALIGNMENT);
             red_gumball_have.setAlignmentX(JComponent.CENTER_ALIGNMENT);
             yellow_gumball_have.setAlignmentX(JComponent.CENTER_ALIGNMENT);
             YChanges.setAlignmentX(JComponent.CENTER_ALIGNMENT);
             yourGumball.setAlignmentX(JComponent.CENTER_ALIGNMENT);
-
             rightPanel.add(Box.createVerticalStrut(150));
             rightPanel.add(yourGumball);
             rightPanel.add(Box.createVerticalStrut(10));
@@ -278,7 +289,7 @@ public class MyFrame extends JFrame{
             rightPanel.add(YChanges,BorderLayout.CENTER);
 
 
-
+            // add to main panel
             mainPanel.add(rightPanel,BorderLayout.EAST);
 
 
