@@ -221,24 +221,17 @@ public class MyFrame extends JFrame{
                             JOptionPane.showMessageDialog(null, "not enough Coins !!!");
                     }
             });
+
+
+            // add t
             twoLevers.add(redLever);
             twoLevers.add(yellowLever);
 
 
             midPanel.add(twoLevers,BorderLayout.SOUTH);
 
-
-
-
-
-
-
-
             //add mid  panel
             mainPanel.add(midPanel,BorderLayout.CENTER);
-
-
-
 
             /* right panel
             use box layout
@@ -288,10 +281,6 @@ public class MyFrame extends JFrame{
 
             // add to main panel
             mainPanel.add(rightPanel,BorderLayout.EAST);
-
-
-
-
 
 
     }
