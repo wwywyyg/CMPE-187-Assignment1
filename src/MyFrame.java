@@ -164,28 +164,25 @@ public class MyFrame extends JFrame{
 
 
 
-
+            // label  and button alignment
             quarter.setAlignmentX(JComponent.CENTER_ALIGNMENT);
             insertLabel.setAlignmentX(JComponent.CENTER_ALIGNMENT);
             nickel.setAlignmentX(JComponent.CENTER_ALIGNMENT);
             dimes.setAlignmentX(JComponent.CENTER_ALIGNMENT);
             insertAmount.setAlignmentX(JComponent.CENTER_ALIGNMENT);
 
-
-
-
             insertCoinSec.add(Box.createVerticalStrut(20));
-            insertCoinSec.add(insertLabel);
+            insertCoinSec.add(insertLabel);                             // add label
             insertCoinSec.add(Box.createVerticalStrut(10));
-            insertCoinSec.add(nickel);
+            insertCoinSec.add(nickel);                                  // add nickel button
             insertCoinSec.add(Box.createVerticalStrut(10));
-            insertCoinSec.add(dimes);
+            insertCoinSec.add(dimes);                                   // add dimes button
             insertCoinSec.add(Box.createVerticalStrut(10));
-            insertCoinSec.add(quarter);
+            insertCoinSec.add(quarter);                                 // add quarter button
             insertCoinSec.add(Box.createVerticalStrut(20));
             insertCoinSec.add(insertAmount);
 
-
+            // add mid panel to the main panel
             midPanel.add(insertCoinSec, BorderLayout.CENTER);
 
 
